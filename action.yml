@@ -1,0 +1,13 @@
+name: 'Has tags action'
+description: 'Check if your repo already has tags'
+inputs:
+  token:
+    description: 'The Github token.'
+    required: false
+    default: ${{ github.token }}
+outputs:
+  hasTags: # id of output
+    description: 'True if you have tags in your repo'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

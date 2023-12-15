@@ -1,0 +1,12 @@
+on: [push]
+
+jobs:
+  has-tags_job:
+    runs-on: ubuntu-latest
+    name: Check if we have tags
+    steps:
+      - name: Check if we have tags
+        id: check
+        uses: ahzed11/has-tags-action@v1.1
+      - name: Get the output
+        run: echo "Has tags ${{ steps.check.outputs.hasTags }}"
